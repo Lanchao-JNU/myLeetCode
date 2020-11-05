@@ -18,11 +18,7 @@ public class Subsets78 {
         List<Integer> path = new ArrayList<Integer>();
         bfs(nums,len,res,path,0);
         return res;
-
-
-
     }
-
     public void bfs(int [] nums,Integer len,List<List<Integer>> res,List<Integer> path,Integer p){
         res.add(new ArrayList<Integer>(path));
         if(len==path.size()&&p==3){
