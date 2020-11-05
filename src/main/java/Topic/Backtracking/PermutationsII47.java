@@ -32,7 +32,9 @@ public class PermutationsII47 {
         }
 
         for (int i=0;i<len;i++){
-            if (!used[i]){
+            if (used[i]||(i>0 && nums[i]==nums[i-1] && !used[i-1])){
+                continue;
+                }
                 used[i]=true;
                 path.add(nums[i]);
 
@@ -44,7 +46,7 @@ public class PermutationsII47 {
         }
 
 
-    }
+
 
     public static void  main (String [] args){
         int [] nums = {1,1,2};
