@@ -7,25 +7,29 @@ public class AddBinary67 {
         Integer lenB = b.length()-1;
         Integer left,right;
         Integer borrow = 0;
-        while (lenA>0 || lenB>0 || borrow>0){
+        while (lenA>=0 || lenB>=0 || borrow>0){
             if (lenA<0){
                 left=0;
-                right=(int)b.charAt(lenB);
-            }else if (lenB<0){
-                left=(int)a.charAt(lenA);
+            }else{
+                left=(int)a.charAt(lenA)-'0';
+            }
+            if (lenB<0){
                 right=0;
-            }else {
-                left=(int)a.charAt(lenA);
-                right=(int)b.charAt(lenB);
+            }else{
+                right=(int)b.charAt(lenB)-'0';
             }
 
             if (left+right+borrow>=2){
-                res.insert(0,0);
-                borrow+=left+right-1;
+                res.insert(0,(char)(left+right+borrow-2+'0'));
+
+                borrow=1;
             }else{
-                res.insert(0,left+right+borrow);
+                res.insert(0,(char)(left+right+borrow+'0'));
                 borrow=0;
             }
+            lenA--;lenB--;
+
+
 
 
         }
@@ -35,10 +39,11 @@ public class AddBinary67 {
 
     public static void main(String[] args){
         AddBinary67 solution = new AddBinary67();
-        String a = "11";
-        String b = "10";
+        String a = "1111";
+        String b = "1111";
         String res = solution.addBinary(a,b);
         System.out.println(res);
+
     }
 
 }
