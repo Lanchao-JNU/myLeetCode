@@ -32,15 +32,3 @@ public class isSubStructure {
         }
     }
 
-//    public boolean isLikeTree(TreeNode A,TreeNode B){
-//        if (A==null && B==null){
-//            return true;
-//        }
-//        if (A==null && B!=null){
-//            return false;
-//        }
-//        if (A!=null && B==null){
-//            return false;
-//        }
-//        return A.val==B.val && isSameTree(A.left,B.left) && isSameTree(A.right,B.right);
-//    }
