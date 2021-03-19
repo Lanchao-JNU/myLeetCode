@@ -3,26 +3,44 @@ package Topic.Test;
 import util.ListNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class TopicsTest {
     public static void main(String[] args) {
-        int[] array = {1, 2, 3};
-        ListNode node = new ListNode();
-        ListNode res = node.ArraytoListNode(array);
-        ArrayList <Object> list= node.ListNodetoArrayList(res);
-        System.out.println(list);
 
-        String DaySql = "SELECT\n" +
-                "month_time AS dateTime\n" +
-                ",app_name as appName\n"+
-                ",sum(regist_user_new) AS registerUserNum\n" +
-                ",if(sum(regist_user_new)=0,0,round(100*sum(regist_user_2month)/sum(regist_user_new),2))  AS registerUser2PeriodRate\n" +
-                ",if(sum(regist_user_new)=0,0,round(100*sum(regist_user_3month)/sum(regist_user_new),2))  AS registerUser3PeriodRate\n" +
-                ",if(sum(regist_user_new)=0,0,round(100*sum(regist_user_4month)/sum(regist_user_new),2)) AS registerUser4PeriodRate\n" +
-                ",if(sum(regist_user_new)=0,0,round(100*sum(regist_user_5month)/sum(regist_user_new),2))  AS registerUser5PeriodRate\n" +
-                ",if(sum(regist_user_new)=0,0,round(100*sum(regist_user_6month)/sum(regist_user_new),2))  AS registerUser6PeriodRate\n" +
-                "from dm_app_ad_login_info_month\n";
-        System.out.println(DaySql);
+
+    String s="123";
+    System.out.println(compareCoordinate(11,22,6));
+    }
+
+    public static int fib(int n) {
+        int a=0;
+        int b=1;
+
+        for (int i=0;i<n;i++){
+            int tmp=a;
+            a=b;
+            b+=tmp;
+
+        }
+        return b;
+
+    }
+
+    public static  boolean compareCoordinate(int i,int j,int k){
+        int sumOver = 0;
+        while (i!=0){
+            sumOver+=i%10;
+            i=i/10;
+        }
+        while (j!=0){
+            sumOver+=j%10;
+            j=j/10;
+        }
+        System.out.println(sumOver);
+        if (sumOver<=k) return true;
+        return false;
+
     }
 
 }
