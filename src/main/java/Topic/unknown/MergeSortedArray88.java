@@ -10,6 +10,7 @@ public class MergeSortedArray88 {
         int i=0;
         int j=0;
         int t=0;
+
         while (i!=m&&j!=n){
             if (nums[i]<=nums2[j]){
                 nums1[t]=nums[i];

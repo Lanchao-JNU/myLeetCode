@@ -14,7 +14,8 @@ import java.util.*;
  * \
  */
 public class BinaryTreeZigzagLevelOrderTraversal103 {
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+    public List<List<Integer>>
+    zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if (root == null) return result;
         Queue<TreeNode> nodeQueue = new LinkedList<TreeNode>();
